@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  background: radial-gradient(circle at top, #1f3756, #141539);
+  background-repeat: no-repeat;
+  color: #3b4363;
+}
+
+.attribution {
+  text-transform: capitalize;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+/*# sourceMappingURL=styles.css.map */
