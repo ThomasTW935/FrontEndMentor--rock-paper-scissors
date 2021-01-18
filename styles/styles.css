@@ -17,6 +17,16 @@ body {
   background-repeat: no-repeat;
   color: #3b4363;
   padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 section {
@@ -78,6 +88,7 @@ section {
 
 .head__Score span {
   font-size: 2em;
+  font-weight: 700;
 }
 
 .pick {
@@ -142,6 +153,8 @@ section {
 
 .pick__Scissors {
   background: radial-gradient(circle at bottom, #ec9e0e, #eca922);
+  position: relative;
+  left: 1.5em;
 }
 
 .pick__Rock {
@@ -168,5 +181,47 @@ section {
 
 .pick__Result {
   display: none;
+}
+
+.rules {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.rules__Button {
+  text-transform: uppercase;
+  background: none;
+  border: 3px solid #606e85;
+  color: #b5bdc9;
+  border-radius: 15px;
+  font-size: 1em;
+  padding: 0.5em 2em;
+}
+
+.rules__Modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  height: 100%;
+  width: 100%;
+  background: white;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rules__Modal button {
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 /*# sourceMappingURL=styles.css.map */
