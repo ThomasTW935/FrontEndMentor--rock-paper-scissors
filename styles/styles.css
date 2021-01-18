@@ -175,8 +175,8 @@ section {
 }
 
 .pick__Bg img {
-  width: 100%;
   height: auto;
+  width: 100%;
 }
 
 .pick__Result {
@@ -223,5 +223,98 @@ section {
   cursor: pointer;
   background: none;
   border: none;
+}
+
+@media only screen and (min-width: 1366px) {
+  .head {
+    border-radius: 15px;
+    width: 45%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding: 1em;
+  }
+  .head__Logo {
+    width: 25%;
+  }
+  .head__Score {
+    width: 100px;
+    height: 80px;
+    padding: 0.75em;
+  }
+  .pick__Paper, .pick__Scissors, .pick__Rock {
+    height: 160px;
+    width: 160px;
+  }
+  .pick__Paper {
+    top: -1em;
+    right: 2em;
+    -ms-grid-column-align: self-end;
+        justify-self: self-end;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .pick__Scissors {
+    top: -1em;
+    left: 2.5em;
+  }
+  .rules {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .rules__Modal {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1000000;
+    width: 28%;
+    height: 50%;
+    border-radius: 15px;
+    padding: 1em;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 10% 1fr;
+    -ms-grid-columns: (1fr)[2];
+        grid-template: 10% 1fr/repeat(2, 1fr);
+        grid-template-areas: "title close" "image image";
+  }
+  .rules__Title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: title;
+  }
+  .rules__Close {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: close;
+    justify-self: flex-end;
+  }
+  .rules__Image {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: image;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 80%;
+  }
+  .rules__Image img {
+    width: 100%;
+    height: auto;
+  }
+  .rules__ModalBg {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+  }
 }
 /*# sourceMappingURL=styles.css.map */
