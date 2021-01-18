@@ -16,6 +16,11 @@ body {
   background: radial-gradient(circle at top, #1f3756, #141539);
   background-repeat: no-repeat;
   color: #3b4363;
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 2em;
 }
 
 .attribution {
@@ -23,5 +28,145 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+
+.head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  border: 3px solid #606e85;
+  border-radius: 5px;
+}
+
+.head__Logo {
+  width: 30%;
+}
+
+.head__Logo img {
+  width: 100%;
+  height: auto;
+}
+
+.head__Score {
+  background: white;
+  border-radius: 5px;
+  color: #2a46c0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25%;
+  padding: 0.25em 0.5em;
+}
+
+.head__Score h4 {
+  font-size: 0.6em;
+}
+
+.head__Score span {
+  font-size: 2em;
+}
+
+.pick {
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pick__Choice {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+  -ms-grid-columns: (1fr)[2];
+      grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+
+.pick__Paper, .pick__Scissors, .pick__Rock {
+  height: 120px;
+  width: 120px;
+  border-radius: 5000000%;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+.pick__Paper::before, .pick__Scissors::before, .pick__Rock::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  background: white;
+  border-radius: 50%;
+}
+
+.pick__Paper img, .pick__Scissors img, .pick__Rock img {
+  position: relative;
+  z-index: 10;
+  left: 10%;
+  height: auto;
+  width: 80%;
+}
+
+.pick__Paper {
+  background: radial-gradient(circle at bottom, #4865f4, #5671f5);
+}
+
+.pick__Scissors {
+  background: radial-gradient(circle at bottom, #ec9e0e, #eca922);
+}
+
+.pick__Rock {
+  background: radial-gradient(circle at bottom, #dc2e4e, #dd405d);
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+.pick__Bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.pick__Bg img {
+  width: 100%;
+  height: auto;
+}
+
+.pick__Result {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */
