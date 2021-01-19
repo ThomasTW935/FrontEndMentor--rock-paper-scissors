@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 section {
   margin-bottom: 2em;
@@ -139,6 +140,7 @@ section {
     border-radius: 15px;
     font-size: 1em;
     padding: 0.5em 2em;
+    cursor: pointer;
   }
   &__Modal {
     position: absolute;
@@ -149,13 +151,31 @@ section {
     width: 100%;
     background: white;
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
+    grid-template: 20% 1fr 20% / 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "close";
     align-items: center;
-    button {
-      cursor: pointer;
-      background: none;
-      border: none;
+  }
+  &__Title {
+    grid-area: title;
+    text-align: center;
+  }
+  &__Close {
+    justify-self: center;
+    border: none;
+    background: none;
+    grid-area: close;
+    cursor: pointer;
+  }
+  &__Image {
+    justify-self: center;
+    grid-area: image;
+    width: 80%;
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }

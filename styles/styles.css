@@ -27,6 +27,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
 section {
@@ -197,6 +198,7 @@ section {
   border-radius: 15px;
   font-size: 1em;
   padding: 0.5em 2em;
+  cursor: pointer;
 }
 
 .rules__Modal {
@@ -208,21 +210,45 @@ section {
   width: 100%;
   background: white;
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -ms-grid-rows: 20% 1fr 20%;
+  -ms-grid-columns: 1fr;
+      grid-template: 20% 1fr 20% / 1fr;
+      grid-template-areas: "title" "image" "close";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.rules__Modal button {
-  cursor: pointer;
-  background: none;
+.rules__Title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  text-align: center;
+}
+
+.rules__Close {
+  -ms-grid-column-align: center;
+      justify-self: center;
   border: none;
+  background: none;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: close;
+  cursor: pointer;
+}
+
+.rules__Image {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: image;
+  width: 80%;
+}
+
+.rules__Image img {
+  width: 100%;
+  height: auto;
 }
 
 @media only screen and (min-width: 1366px) {
@@ -276,8 +302,7 @@ section {
     height: 50%;
     border-radius: 15px;
     padding: 1em;
-    display: -ms-grid;
-    display: grid;
+    display: none;
     -ms-grid-rows: 10% 1fr;
     -ms-grid-columns: (1fr)[2];
         grid-template: 10% 1fr/repeat(2, 1fr);
@@ -287,6 +312,7 @@ section {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: title;
+    justify-self: flex-start;
   }
   .rules__Close {
     -ms-grid-row: 1;

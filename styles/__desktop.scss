@@ -43,7 +43,7 @@
       height: 50%;
       border-radius: 15px;
       padding: 1em;
-      display: grid;
+      display: none;
       grid-template: 10% 1fr / repeat(2, 1fr);
       grid-template-areas:
         "title close"
@@ -51,6 +51,7 @@
     }
     &__Title {
       grid-area: title;
+      justify-self: flex-start;
     }
     &__Close {
       grid-area: close;
