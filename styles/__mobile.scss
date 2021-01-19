@@ -18,10 +18,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  gap: 1em;
 }
-section {
-  margin-bottom: 2em;
-}
+
 .attribution {
   text-transform: capitalize;
   position: absolute;
@@ -141,6 +140,9 @@ section {
     font-size: 1em;
     padding: 0.5em 2em;
     cursor: pointer;
+  }
+  .modal__Unhide {
+    display: grid;
   }
   &__Modal {
     position: absolute;

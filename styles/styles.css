@@ -28,10 +28,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
-}
-
-section {
-  margin-bottom: 2em;
+  gap: 1em;
 }
 
 .attribution {
@@ -201,6 +198,11 @@ section {
   cursor: pointer;
 }
 
+.rules .modal__Unhide {
+  display: -ms-grid;
+  display: grid;
+}
+
 .rules__Modal {
   position: absolute;
   top: 0;
@@ -252,6 +254,9 @@ section {
 }
 
 @media only screen and (min-width: 1366px) {
+  body {
+    padding: 2em;
+  }
   .head {
     border-radius: 15px;
     width: 45%;
