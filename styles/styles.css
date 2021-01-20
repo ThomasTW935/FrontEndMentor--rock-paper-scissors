@@ -81,8 +81,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
-  padding: 0.25em 0.5em;
+  padding: 0.5em 2em;
 }
 
 .head__Score h4 {
@@ -90,7 +89,7 @@ body {
 }
 
 .head__Score span {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: 700;
 }
 
@@ -117,8 +116,8 @@ body {
 }
 
 .pick__Paper, .pick__Scissors, .pick__Rock, .pick__Lizard, .pick__Spock {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   border-radius: 5000000%;
   display: -ms-grid;
   display: grid;
@@ -150,7 +149,6 @@ body {
 }
 
 .pick__Scissors {
-  top: -0.5em;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-row: 1;
@@ -161,11 +159,11 @@ body {
 }
 
 .pick__Paper, .pick__Spock {
-  bottom: 2em;
+  bottom: 1.5em;
 }
 
 .pick__Paper {
-  left: 5em;
+  left: 4em;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: paper;
@@ -173,15 +171,15 @@ body {
 }
 
 .pick__Rock {
+  left: 2em;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: rock;
   background: radial-gradient(circle at bottom, #dc2e4e, #dd405d);
-  left: 2.5em;
 }
 
 .pick__Lizard {
-  right: 2.5em;
+  right: 2em;
   -ms-grid-column-align: end;
       justify-self: end;
   -ms-grid-row: 3;
@@ -191,7 +189,7 @@ body {
 }
 
 .pick__Spock {
-  right: 5em;
+  right: 4em;
   -ms-grid-column-align: end;
       justify-self: end;
   -ms-grid-row: 2;
@@ -206,6 +204,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 85%;
 }
 
 .pick__Bg img {
@@ -215,6 +214,103 @@ body {
 
 .pick__Final {
   display: none;
+  -ms-grid-rows: (1fr)[2];
+  -ms-grid-columns: (1fr)[2];
+      grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+      grid-template-areas: "you house" "result result";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-column-gap: 4em;
+          column-gap: 4em;
+}
+
+.pick__YouPicked, .pick__HousePicked {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  gap: 2em;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.pick__YouPicked div, .pick__HousePicked div {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 120px;
+  width: 120px;
+}
+
+.pick__YouPicked div img, .pick__HousePicked div img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 30%;
+}
+
+.pick__YouPicked {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: you;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.pick__HousePicked {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: house;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.pick__Result {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: result;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.pick__Result span {
+  font-size: 2em;
+  color: white;
+}
+
+.pick__Result button {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 0.5em 3em;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .rules {
@@ -310,74 +406,50 @@ body {
     padding: 0.75em;
     font-size: 1.2em;
   }
-  .pick__Paper, .pick__Scissors, .pick__Rock {
-    height: 120px;
-    width: 120px;
+  .pick__Paper, .pick__Scissors, .pick__Rock, .pick__Lizard, .pick__Spock {
+    height: 150px;
+    width: 150px;
+  }
+  .pick__Scissors {
+    top: -2.5em;
+  }
+  .pick__Paper, .pick__Spock {
+    bottom: 4em;
+  }
+  .pick__Paper {
+    left: 6.5em;
+  }
+  .pick__Rock {
+    left: 2.5em;
+  }
+  .pick__Lizard {
+    right: 2.5em;
+  }
+  .pick__Spock {
+    right: 6.5em;
+  }
+  .pick__Bg {
+    width: 25%;
   }
   .pick__Final {
     -ms-grid-rows: 1fr;
     -ms-grid-columns: 3fr 1fr 3fr;
         grid-template: 1fr / 3fr 1fr 3fr;
         grid-template-areas: "you result house";
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    gap: 4em;
   }
   .pick__YouPicked, .pick__HousePicked {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 3em;
-    text-transform: uppercase;
     font-size: 1.1em;
-    font-weight: 600;
-    color: white;
-    text-align: center;
-    -webkit-transition: 0.3s ease-in;
-    transition: 0.3s ease-in;
   }
   .pick__YouPicked div, .pick__HousePicked div {
-    top: 0;
-    right: 0;
-    left: 0;
     height: 250px;
     width: 250px;
   }
-  .pick__YouPicked div img, .pick__HousePicked div img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 30%;
-  }
-  .pick__YouPicked {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: you;
-    -ms-grid-column-align: end;
-        justify-self: end;
-  }
-  .pick__HousePicked {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-    grid-area: house;
-    -ms-grid-column-align: start;
-        justify-self: start;
-  }
   .pick__Result {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: result;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

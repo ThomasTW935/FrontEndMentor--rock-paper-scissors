@@ -28,20 +28,14 @@ async function Play() {
   let housePick = GenerateRandomNumber(0, maxNum);
   let yourPick = Array.from(pickOptions).indexOf(target)
 
+
+  // Logic of the game
+
+  let plusOne = (yourPick + 1) % (maxNum + 1)
+  let plusThree = (yourPick + 3) % (maxNum + 1)
   let result = (yourPick == housePick) ? 0 :
-    (yourPick == maxNum && housePick == 0) ? 1 :
-      (yourPick > housePick || yourPick == 0 && housePick == maxNum) ? -1 : 1;
+    (housePick == plusOne || housePick == plusThree) ? 1 : -1
 
-
-  console.log(`Player: ${yourPick} House: ${housePick}`)
-  // switch(yourPick){
-  //   case 0: 
-  // }
-  // 0 beats 1 and 3
-  // 1 beats 2 and 4
-  // 2 beats 3 and 0
-  // 3 beats 4 and 1
-  // 4 beats 1 and 2
 
   let targetClone = target.cloneNode(true)
   let houseClone = pickOptions[housePick].cloneNode(true)
