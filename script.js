@@ -1,3 +1,9 @@
+
+let initialValue = sessionStorage.score ?? 0
+sessionStorage.setItem('score', initialValue)
+UpdateScore(parseInt(sessionStorage.score))
+
+
 let modalToggle = document.querySelectorAll('.rules__Toggle')
 modalToggle.forEach(toggle => {
   toggle.style.display = 'none'
@@ -23,23 +29,28 @@ async function Play() {
   let yourPick = Array.from(pickOptions).indexOf(target)
 
   let result = (yourPick == housePick) ? 0 :
-    (yourPick == 0 && housePick == maxNum) ? 1 :
-      (yourPick < housePick || yourPick == maxNum && housePick == 0) ? -1 : 1;
+    (yourPick == maxNum && housePick == 0) ? 1 :
+      (yourPick > housePick || yourPick == 0 && housePick == maxNum) ? -1 : 1;
+
+
+  console.log(`Player: ${yourPick} House: ${housePick}`)
+  // switch(yourPick){
+  //   case 0: 
+  // }
+  // 0 beats 1 and 3
+  // 1 beats 2 and 4
+  // 2 beats 3 and 0
+  // 3 beats 4 and 1
+  // 4 beats 1 and 2
 
   let targetClone = target.cloneNode(true)
   let houseClone = pickOptions[housePick].cloneNode(true)
 
   let choicesDiv = document.querySelector('.pick__Choice')
-  choicesDiv.style.display = 'none'
-
   let finalDiv = document.querySelector('.pick__Final')
+
+  choicesDiv.style.display = 'none'
   finalDiv.style.display = 'grid'
-
-
-  // targetClone.classList.add('pick__YouPicked')
-  // houseClone.classList.add('pick__HousePicked')
-  // finalDiv.append(targetClone)
-  // finalDiv.append(houseClone)
 
   let youDiv = document.querySelector('.pick__YouPicked')
   let houseDiv = document.querySelector('.pick__HousePicked')
@@ -76,7 +87,9 @@ function ResetGame() {
 function UpdateScore(count) {
   let scoreSpan = document.querySelector('.head__Score span')
   let currentScore = parseInt(scoreSpan.innerHTML)
-  scoreSpan.innerHTML = currentScore + count
+
+  sessionStorage.score = currentScore + count
+  scoreSpan.innerHTML = sessionStorage.score
 }
 function timer(ms) {
   return new Promise(res => setTimeout(res, ms))
