@@ -23,24 +23,27 @@ async function Play() {
   let yourPick = Array.from(pickOptions).indexOf(target)
   console.log(`Pick: ${yourPick} House: ${housePick}`)
   let result = (yourPick == housePick) ? 'Draw' :
-    (yourPick == 0 && housePick == maxNum) ? 'Win' :
-      (yourPick < housePick || yourPick == maxNum && housePick == 0) ? 'Lose' : 'Win';
+    (yourPick == 0 && housePick == maxNum) ? 'You Win' :
+      (yourPick < housePick || yourPick == maxNum && housePick == 0) ? 'You Lose' : 'You Win';
   console.log(`Result: ${result}`)
 
   let targetClone = target.cloneNode(true)
   let houseClone = pickOptions[housePick].cloneNode(true)
-  console.log(targetClone)
-  console.log(houseClone)
 
   let choicesDiv = document.querySelector('.pick__Choice')
   choicesDiv.style.display = 'none'
 
-  let resultDiv = document.querySelector('.pick__Result')
-  resultDiv.style.display = 'grid'
+  let finalDiv = document.querySelector('.pick__Final')
+  finalDiv.style.display = 'grid'
 
-  resultDiv.append(targetClone)
-  await timer(500)
-  resultDiv.append(houseClone)
+
+  targetClone.classList.add('pick__YouPicked')
+  houseClone.classList.add('pick__HousePicked')
+  finalDiv.append(targetClone)
+  await timer(1000)
+  finalDiv.append(houseClone)
+  let resultSpan = document.querySelector('.pick__Result span')
+  resultSpan.innerHTML = result
 
 }
 

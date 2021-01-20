@@ -33,6 +33,54 @@
       top: -1em;
       left: 2.5em;
     }
+    &__Final {
+      grid-template: 1fr / 3fr 1fr 3fr;
+      grid-template-areas: "you result house";
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 4em;
+    }
+    &__YouPicked,
+    &__HousePicked {
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 220px;
+      width: 220px;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+      }
+    }
+    &__YouPicked {
+      grid-area: you;
+      justify-self: end;
+    }
+    &__HousePicked {
+      grid-area: house;
+      justify-self: start;
+    }
+    &__Result {
+      grid-area: result;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+      span {
+        font-size: 2em;
+        color: white;
+      }
+      button {
+        text-transform: uppercase;
+        font-size: 0.8em;
+        padding: 0.5em 3em;
+        border-radius: 5px;
+      }
+    }
   }
   .rules {
     display: flex;

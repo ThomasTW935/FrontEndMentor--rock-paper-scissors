@@ -184,7 +184,7 @@ body {
   width: 100%;
 }
 
-.pick__Result {
+.pick__Final {
   display: none;
 }
 
@@ -295,6 +295,75 @@ body {
   .pick__Scissors {
     top: -1em;
     left: 2.5em;
+  }
+  .pick__Final {
+    -ms-grid-rows: 1fr;
+    -ms-grid-columns: 3fr 1fr 3fr;
+        grid-template: 1fr / 3fr 1fr 3fr;
+        grid-template-areas: "you result house";
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    gap: 4em;
+  }
+  .pick__YouPicked, .pick__HousePicked {
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 220px;
+    width: 220px;
+  }
+  .pick__YouPicked img, .pick__HousePicked img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 30%;
+  }
+  .pick__YouPicked {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: you;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  .pick__HousePicked {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: house;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+  .pick__Result {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: result;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1em;
+  }
+  .pick__Result span {
+    font-size: 2em;
+    color: white;
+  }
+  .pick__Result button {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    padding: 0.5em 3em;
+    border-radius: 5px;
   }
   .rules {
     display: -webkit-box;
