@@ -39,7 +39,7 @@
   <section class='head'>
     <div class='head__Logo'><img src='./images/logo.svg' /></div>
     <div class='head__Score'>
-      <h4>Score</h4><span>12</span>
+      <h4>Score</h4><span>0</span>
     </div>
   </section>
   <section class='pick'>
@@ -50,9 +50,15 @@
       <div class='pick__Rock pick__Options' id='rock'><img src='./images/icon-rock.svg' /></div>
     </div>
     <div class='pick__Final'>
+      <section class='pick__YouPicked'>
+        <span>You Picked</span>
+      </section>
       <section class='pick__Result'>
         <span></span>
-        <button>play again</button>
+        <button type='button' onClick='ResetGame()'>play again</button>
+      </section>
+      <section class='pick__HousePicked'>
+        <span>The House Picked</span>
       </section>
     </div>
   </section>

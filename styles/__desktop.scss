@@ -43,17 +43,28 @@
     }
     &__YouPicked,
     &__HousePicked {
-      top: 0;
-      right: 0;
-      left: 0;
-      height: 220px;
-      width: 220px;
-      img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 3em;
+      text-transform: uppercase;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      transition: 0.3s ease-in;
+      div {
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 250px;
+        width: 250px;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 30%;
+        }
       }
     }
     &__YouPicked {
@@ -70,6 +81,7 @@
       flex-direction: column;
       align-items: center;
       gap: 1em;
+      transition: 0.3s;
       span {
         font-size: 2em;
         color: white;
@@ -79,6 +91,10 @@
         font-size: 0.8em;
         padding: 0.5em 3em;
         border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          color: red;
+        }
       }
     }
   }
